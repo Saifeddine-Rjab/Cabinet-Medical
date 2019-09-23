@@ -1,0 +1,47 @@
+
+  <mat-grid-list cols="2" rowHeight="300px">
+    <mat-grid-tile>
+      <div class="controles-container">
+        <!-- <input type="hidden" formControlName="$key">
+        <mat-form-field>
+          <input formControlName="fullName" matInput placeholder="Nom">
+          <mat-error>This field is mandatory.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="email" matInput placeholder="Prénom">
+          <mat-error>Invalid email address.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="mobile" matInput placeholder="Tel*">
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="city" matInput placeholder="Adresse">
+        </mat-form-field> -->
+        <mat-form-field class="example-full-width">
+          <input [(ngModel)]="name" matInput placeholder="Nom">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input [(ngModel)]="lastName" matInput placeholder="Prénom">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input [(ngModel)]="tel" matInput placeholder="Tel">
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="controles-container">
+        
+        <mat-form-field class="example-full-width">
+          <input [(ngModel)]="address" matInput placeholder="Adresse">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input [(ngModel)]="job" matInput placeholder="Travail">
+        </mat-form-field>
+        <div class="button-row">
+          <button mat-raised-button color="primary" (clik)= "ajouterPatient()" >Annuler</button>
+          <button mat-raised-button color="warn" (click)="onClear()">Ajouter</button>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+

@@ -1,13 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatButtonModule, MatCardModule, MatIconModule, MatTableModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatIconModule, MatTableModule, 
+         MatInputModule, MatFormFieldModule, MatToolbarModule, MatRadioModule,
+         MatOptionModule, MatSelectModule, MatDatepickerModule,
+         MatCheckboxModule,
+         DateAdapter,
+         MatNativeDateModule} from '@angular/material';
 import { MatGridListModule } from '@angular/material/grid-list';
 
 import { StatModule } from '../../shared/modules/stat/stat.module';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { PatientDialogFormComponent } from './PatientForm/patient-dialog-form/patient-dialog-form.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
     imports: [
         CommonModule,
@@ -19,8 +26,21 @@ import { DashboardComponent } from './dashboard.component';
         MatTableModule,
         MatButtonModule,
         MatIconModule,
-        FlexLayoutModule.withConfig({addFlexToParent: false})
+        MatFormFieldModule,
+        MatInputModule,
+        MatDialogModule,
+        MatToolbarModule,
+        MatRadioModule,
+        MatOptionModule,
+        MatSelectModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatCheckboxModule,
+        FormsModule,
+        FlexLayoutModule.withConfig({addFlexToParent: false}),
     ],
-    declarations: [DashboardComponent]
+    providers: [MatDatepickerModule],
+    declarations: [DashboardComponent, PatientDialogFormComponent],
+    entryComponents: [PatientDialogFormComponent]
 })
 export class DashboardModule {}
